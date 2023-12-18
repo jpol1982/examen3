@@ -117,17 +117,25 @@ padding: 1px;
   flex-flow: wrap;
   justify-content: center;
   background-color: #9099ff;
+  
 }
 
 .galeria img{
+
   max-width: 400px;
-  padding: 1rem;
+  padding-right: 40px;
+  margin-top: 40px;
+  margin: auto;
+  
 }
 
 .llave
 {
 	text-align: center;
 	margin-left: 0px;
+	font-size: 20px;
+	height: 50px;
+	width: 210px;
 }
 
 .botonMostar{
@@ -208,7 +216,7 @@ footer > div {
 		    <input type="file" id="cargarImagen" capture>
 	     </div>
 		 <div>
-		     <button class="botonMostar" id="testImageBtn">GENERAR IMAGENES</button>
+		     <button class="botonMostar" id="ImageBtn">GENERAR IMAGENES</button>
          </div>
 	</div>	
 
@@ -240,7 +248,7 @@ footer > div {
 				document.querySelector('#cargarImagen').addEventListener('change', cargarImagen);
 
 				//document.querySelector('#testImageBtn').addEventListener('click', doImageTest);
-				document.querySelector('#testImageBtn').addEventListener('click', funMostrarImagen);
+				document.querySelector('#ImageBtn').addEventListener('click', funMostrarImagen);
 				initDb();
 			});
 
@@ -320,7 +328,7 @@ footer > div {
 					if (c){
 						console.log("hola");
 					imag= 'data:image/jpeg;base64,' + btoa(c.value['data']);
-					listaImagen.innerHTML += "<div><img src='"+imag+"' alt=''><h2 class='llave'>"+c.value['nombre']+"</h2></div>";
+					listaImagen.innerHTML += "<div><img src='"+imag+"' alt=''><h2 class='llave'>"+c.value['nombre']+"</div><div></h2></div>";
 					
 					c.continue();
 					}
