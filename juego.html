@@ -1,0 +1,390 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica;
+}
+
+
+/* navegacion PRINCIPAL */
+.nav_principal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 1px 8px rgb(68, 89, 189);
+    background-color: rgb(145, 161, 215);
+}
+
+.nav_principal .division {
+color: #070707;
+margin: 0px;
+width: 0px;
+padding: 1px;
+}
+
+.nav_principal li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 20px;
+   
+}
+
+.nav_principal a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_principal a:hover {
+    color: #b2dfdb;
+}
+
+
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 4px 4px;
+    cursor: pointer;
+  }
+
+
+  #Buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 28px;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 25px;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
+    margin-right: 5px;
+  }
+
+
+/* navegacion LETRAS */
+.nav_letras {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title1 {
+    margin-right: auto;
+    font-size: 2.5em;
+}
+#nav-title2 {
+    margin-left: auto;
+    font-size: 2.5em;
+    padding-left: 20px;
+}
+ 
+
+
+.interfBoton{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.boton{
+  background-color: #354fc6; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+  justify-content: center;
+  
+}
+
+.container > div {
+  background-color: #f1f1f1;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 20px;
+  cursor: url("img/adventista.png"),auto;
+}
+
+
+.container2{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+  justify-content: center;
+}
+
+
+.figura {
+  background-color: #f1f1f1;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 25px;
+  
+}
+
+
+
+.box{
+  
+  background-color: rgb(83, 92, 179);
+}
+
+
+
+</style>
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+
+
+<body>
+
+  <header >
+    <nav class="nav_principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="division">|</li>
+        <li><a href="juego.html">Juego</a></li>
+        <li class="division">|</li>
+        <li><a href="cargar.html">Cargar</a></li>
+        <li class="division">|</li>
+        <li><a href="#">Contactos</a></li>
+        <li class="division">|</li>
+        <li><a href="#">Noticias</a></li>
+        <li class="division">|</li>
+        <li>login</li>
+        <li><input type="search" placeholder="" id="Buscador" /><button class="button">Buscar</button><button class="button">Marca</button></li>
+      </ul>
+     </nav>  
+  </header>
+
+  <header class="nav_letras">
+    <h1 id="nav-title1">ESTUDIOS BIBLICO</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg/1280px-Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg.png" style="width: 250px; height: 100px;">
+    <h1 id="nav-title2">JUEGO 10 MANDAMIENTOS</h1>
+  </header>
+
+
+ 
+ 
+
+
+
+<div class="interfBoton">
+ <button class="boton" onclick="generar2()">cargar</button>
+ <button class="boton" onclick="generar()">Comenzar Juego</button>
+ <button class="boton" onclick="limpiar()">nuevo Juego</button>
+</div>
+
+
+<div class="container" id="colocar">
+ <!-- lista de preguntas -->
+
+</div>
+  
+
+
+<div class="container2" id="colocarRespuesta">
+   <!-- lista de respuestas -->
+</div>
+</body>
+
+<!-- /////////////////////////////////////////////// -->
+<script>
+let arregloRespuestas=["","","","","","","","","","","",""]; 
+
+var imagenes=[];
+var KeyImagenes=[];
+
+
+      let db;
+			let dbVersion = 2;
+			let dbReady = false;
+
+      document.addEventListener('DOMContentLoaded', () => {
+				console.log('comienza');
+
+				initDb();
+			});
+
+      function initDb() {
+				let request = indexedDB.open('bibliaDB', dbVersion);
+
+				request.onerror = function(e) {
+					console.error('Unable to open database.');
+				}
+
+				request.onsuccess = function(e) {
+					db = e.target.result;
+					console.log('db opened');
+				}
+
+				request.onupgradeneeded = function(e) {
+					let db = e.target.result;
+					db.createObjectStore('historia', {keyPath:'id', autoIncrement: true});
+					dbReady = true;
+				}
+			}
+
+
+
+function limpiar()
+{
+  location.reload();
+}
+
+// extrae los datos de la indexdb
+function generar2()
+{
+  let trans = db.transaction(['historia'], 'readonly');
+				//hard coded id
+				let req = trans.objectStore(['historia']);
+				const req2 = req.openCursor();
+				console.log(req);
+				req2.onsuccess = (e) =>{
+					let c = e.target.result;
+					
+					if (c){
+						console.log("hola");
+					imag= 'data:image/jpeg;base64,' + btoa(c.value['data']);
+					imagenes.push(imag);
+          KeyImagenes.push(c.value['nombre']);
+					c.continue();
+					}
+        }
+}
+
+// genera el juego para que se vea en la pagina web
+function generar()
+{
+
+ //define para poner las imagenes en random
+var aleatorio=[];
+for(let x = 0; x < imagenes.length; x++)
+{
+  aleatorio[x]=x;
+}
+aleatorio = aleatorio.sort(function() {return Math.random() - 0.5});
+//fin de randon
+
+
+
+//coloca genera las imagenes para mostrar en la parte superior
+var lista = document.getElementById("colocar");
+
+for(let x = 0; x < imagenes.length; x++)
+{
+  lista.innerHTML += "<div><img src='"+imagenes[aleatorio[x]]+"' width='150' height='150'  alt='' draggable='true' ondragstart='drag(event)' id='"+KeyImagenes[aleatorio[x]]+"'></div>";
+}
+
+//coloca la posicion de las respuestas en la misma posicion en que se cargo del primero al utlimo
+let i=0;
+var Resplista = document.getElementById("colocarRespuesta");
+KeyImagenes.forEach(KeyImagenes => Resplista.innerHTML += "<div class='figura'><div class='box' id='"+(i++)+"' ondrop='drop(event)' ondragover='allowDrop(event)'>"+KeyImagenes+"</div></div>");
+ 
+}
+
+
+
+function allowDrop(ev)
+{
+    ev.preventDefault();
+
+}
+
+function drag(ev)
+{
+    ev.dataTransfer.setData("text", ev.target.id);
+
+}
+
+function drop(ev)
+{
+    if(arregloRespuestas[parseInt(ev.target.id)]=="")
+    {
+          var data = ev.dataTransfer.getData("text");
+          arregloRespuestas[parseInt(ev.target.id)] = data;
+          ev.target.appendChild(document.getElementById(data));
+
+    }
+
+//verifica si ya se llenaron todos los blancos
+var verificadorDeespaciosenBlanco=0;    
+for(let x = 0; x < imagenes.length; x++)
+  {
+    if(arregloRespuestas[x] != "")
+       verificadorDeespaciosenBlanco++;
+   
+  }
+  console.log("contador")
+ console.log(verificadorDeespaciosenBlanco)
+//cuando se llenaron todos los espacios verifica si las respuestas son correctas
+if(verificadorDeespaciosenBlanco==imagenes.length)
+{
+  var correctas=0;
+  for(let x = 0; x < imagenes.length; x++)
+  {
+    //define si son correctas las respuestas si son verifica para dar la respuesta
+    if(arregloRespuestas[x]==KeyImagenes[x])
+    { 
+        correctas++;
+    }
+  }
+ 
+  if(correctas==imagenes.length)
+  {
+    document.querySelector("h1").innerHTML = "Felicidades SI estudio";
+    document.querySelector("h1").style.color = "green";
+  }
+  else
+  {
+    document.querySelector("h1").innerHTML = "No Estudio";
+    document.querySelector("h1").style.color = "red";
+  }
+
+}
+
+
+}    
+
+</script>

@@ -1,0 +1,334 @@
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica;
+}
+/* navegacion PRINCIPAL */
+.nav_principal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 1px 8px rgb(68, 89, 189);
+    background-color: rgb(145, 161, 215);
+}
+
+.nav_principal .division {
+color: #070707;
+margin: 0px;
+width: 0px;
+padding: 1px;
+}
+
+.nav_principal li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 20px;
+   
+}
+
+.nav_principal a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_principal a:hover {
+    color: #b2dfdb;
+}
+
+
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 4px 4px;
+    cursor: pointer;
+  }
+
+
+  #Buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 28px;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 25px;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
+    margin-right: 5px;
+  }
+
+
+/* navegacion LETRAS */
+.nav_letras {
+    display: flex;
+    justify-content: flex-end;
+	flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title1 {
+    margin-right: auto;
+    font-size: 2.5em;
+}
+#nav-title2 {
+    margin-left: auto;
+    font-size: 2.5em;
+    padding-left: 20px;
+}
+ 
+  
+
+.contenedor3{
+   display: flex;
+  background-color: DodgerBlue;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor3 > div{
+	margin: 10px;
+  font-size: 20px;
+}
+
+.contenedor3 > div input{
+  font-size: 20px;
+}
+
+
+
+
+.galeria{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  background-color: #9099ff;
+}
+
+.galeria img{
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.llave
+{
+	text-align: center;
+	margin-left: 0px;
+}
+
+.botonMostar{
+	background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+
+}
+
+
+footer {
+	display: flex;
+    flex-direction: row;
+	justify-content: flex-end;
+ 
+  }
+  
+footer > div {
+	 background-color: black;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+	  
+}
+
+</style>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+
+		<header >
+			<nav class="nav_principal">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li class="division">|</li>
+					<li><a href="juego.html">Juego</a></li>
+                    <li class="division">|</li>
+                    <li><a href="cargar.html">Cargar</a></li>
+					<li class="division">|</li>
+					<li><a href="#">Contactos</a></li>
+					<li class="division">|</li>
+					<li><a href="#">Noticias</a></li>
+					<li class="division">|</li>
+					<li>login</li>
+					<li><input type="search" placeholder="" id="Buscador" /><button class="button">Buscar</button><button class="button">Marca</button></li>
+				</ul>
+			 </nav>  
+		</header>
+
+		<header class="nav_letras">
+			<h1 id="nav-title1">ESTUDIOS BIBLICO</h1>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg/1280px-Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg.png" style="width: 250px; height: 100px;">
+			<h1 id="nav-title2">CARGADO A INDEXDB</h1>
+		</header>
+
+
+
+    <div class="contenedor3">
+	     <div>
+		     <h2>CARGADO DE INFORMACION</h2>
+	    </div>
+		<div>
+		    <input type="file" id="cargarImagen" capture>
+	     </div>
+		 <div>
+		     <button class="botonMostar" id="testImageBtn">GENERAR IMAGENES</button>
+         </div>
+	</div>	
+
+
+
+	<div class="galeria" id="mostrarImagen">
+		<!-- galeria de imagenes que rescata de indexDB -->
+	</div>
+
+
+
+
+	<!-- <footer>
+		<div>
+        <p class="text-center">Contenido BIBLICO 2023 @ Derechos resevados</p>
+	   </div>
+	   
+    </footer> -->
+		
+
+		<script>
+			let db;
+			let dbVersion = 2;
+			let dbReady = false;
+
+			document.addEventListener('DOMContentLoaded', () => {
+				console.log('dom content loaded');
+
+				document.querySelector('#cargarImagen').addEventListener('change', cargarImagen);
+
+				//document.querySelector('#testImageBtn').addEventListener('click', doImageTest);
+				document.querySelector('#testImageBtn').addEventListener('click', funMostrarImagen);
+				initDb();
+			});
+
+			function initDb() {
+				let request = indexedDB.open('bibliaDB', dbVersion);
+
+				request.onerror = function(e) {
+					console.error('Unable to open database.');
+				}
+
+				request.onsuccess = function(e) {
+					db = e.target.result;
+					console.log('db opened');
+				}
+
+				request.onupgradeneeded = function(e) {
+					let db = e.target.result;
+					db.createObjectStore('historia', {keyPath:'id', autoIncrement: true});
+					dbReady = true;
+				}
+			}
+
+			function cargarImagen(e) {
+				
+                console.log("nombre");
+				
+
+				let file = e.target.files[0];
+				
+				
+				let nombreSinExtencion = file.name.split('.');
+				console.log(nombreSinExtencion[0]);
+
+
+				var reader = new FileReader();
+//				reader.readAsDataURL(file);
+				reader.readAsBinaryString(file);
+
+				reader.onload = function(e) {
+					//alert(e.target.result);
+					let bits = e.target.result;
+					let ob = {
+						nombre:nombreSinExtencion[0],
+						data:bits
+					};
+
+					let trans = db.transaction(['historia'], 'readwrite');
+					let addReq = trans.objectStore('historia').add(ob);
+
+					addReq.onerror = function(e) {
+						console.log('error storing data');
+						console.error(e);
+					}
+
+					trans.oncomplete = function(e) {
+						console.log('data stored');
+					}
+				}
+				window.location.reload();
+
+			}
+
+
+			function funMostrarImagen() {
+                var listaImagen = document.getElementById("mostrarImagen");
+
+				console.log('mostrarImagen');
+				
+				let trans = db.transaction(['historia'], 'readonly');
+				//hard coded id
+				let req = trans.objectStore(['historia']);
+				const req2 = req.openCursor();
+				console.log(req);
+				req2.onsuccess = (e) =>{
+					let c = e.target.result;
+					
+					if (c){
+						console.log("hola");
+					imag= 'data:image/jpeg;base64,' + btoa(c.value['data']);
+					listaImagen.innerHTML += "<div><img src='"+imag+"' alt=''><h2 class='llave'>"+c.value['nombre']+"</h2></div>";
+					
+					c.continue();
+					}
+                   }
+			}
+			
+
+		</script>
+
+	</body>
+</html>

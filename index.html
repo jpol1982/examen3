@@ -1,0 +1,202 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica;
+}
+
+
+/* navegacion PRINCIPAL */
+.nav_principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 1px 8px rgb(68, 89, 189);
+    background-color: rgb(145, 161, 215);
+}
+
+.nav_principal .division {
+color: #070707;
+margin: 0px;
+width: 0px;
+padding: 1px;
+}
+
+.nav_principal li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 20px;
+   
+}
+
+.nav_principal a {
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_principal a:hover {
+    color: #b2dfdb;
+}
+
+
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 4px 4px;
+    cursor: pointer;
+  }
+
+
+  #Buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 28px;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 25px;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
+    margin-right: 5px;
+  }
+
+
+/* navegacion LETRAS */
+.nav_letras {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title1 {
+    margin-right: auto;
+    font-size: 2.5em;
+}
+#nav-title2 {
+    margin-left: auto;
+    font-size: 2.5em;
+    padding-left: 20px;
+}
+ 
+.main
+{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #8ed2ff;
+}
+.main div{
+  
+  justify-content:center;
+  margin: 10px;
+  padding: 20px;
+ 
+}
+
+.main div p{
+  margin-top: 60px;
+  text-align: justify;
+  font-size: 22px;
+  color: rgb(2, 2, 2);
+}
+
+.lista li
+{
+  padding: 5px;
+  font-size: 26px;
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+
+
+<body>
+
+  <header >
+    <nav class="nav_principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="division">|</li>
+        <li><a href="juego.html">Juego</a></li>
+        <li class="division">|</li>
+        <li><a href="cargar.html">Cargar</a></li>
+        <li class="division">|</li>
+        <li><a href="#">Contactos</a></li>
+        <li class="division">|</li>
+        <li><a href="#">Noticias</a></li>
+        <li class="division">|</li>
+        <li>login</li>
+        <li><input type="search" placeholder="" id="Buscador" /><button class="button">Buscar</button><button class="button">Marca</button></li>
+      </ul>
+     </nav>  
+  </header>
+
+  <header class="nav_letras">
+    <h1 id="nav-title1">ESTUDIOS BIBLICO</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg/1280px-Iglesia_Adventista_del_S%C3%A9ptimo_D%C3%ADa.svg.png" style="width: 250px; height: 100px;">
+    <h1 id="nav-title2">LOS 10 MANDAMIENTOS</h1>
+  </header>
+
+
+ 
+ <main class="main">
+   <div class="texto">
+   <img src="https://phantom-elmundo.unidadeditorial.es/08b3fcca0ee38da9d243323f818e5bf3/crop/654x292/2672x1637/resize/746/f/webp/assets/multimedia/imagenes/2022/05/24/16534030526061.jpg" style="width: 400px; height: 300px;">
+   
+   
+  </div> 
+   <div>
+   <p style="width: 400px; height: 300px;"> Según la historia narrada en el libro de Éxodo, Dios escribió con su dedo los 10 mandamientos en dos tablas de piedra y se los entregó entre truenos a Moisés en el monte Sinaí. Son, por tanto la ley que Dios entregó al pueblo de Israel y que hoy rigen la moral del cristianismo y del judaísmo.</p>
+   </div>
+</main>
+
+<main class="main">
+  <div class="texto">
+   <img src="https://3.bp.blogspot.com/-iaZ2vOydIOw/T5yfCC6VNCI/AAAAAAAAAg0/f0n9Yjpgqcg/s1600/mandamientos-color.JPG" style="width: 600px; height: 400px;">
+  </div> 
+  <div>
+   <ol class="lista">
+    <li>AMAR A DIOS SOBRE TODAS LAS COSAS</li>
+    <li>NO USAR EL NOMBRE DE DIOS EN VANO</li>
+    <li>SANTIFICAR LAS FIESTAS</li>
+    <li>HONRAR A TU PADRE Y A TU MADRE</li>
+    <li>NO MATAR</li>
+    <li>NO COMETER ACTOS IMPUROS</li>
+    <li>NO ROBAR</li>
+    <li>NO MENTIR</li>
+    <li>NO CODICIAR LA MUJER DE TU PROJIMO</li>
+    <li>NO CODICIAR LOS BIENES AJENOS</li>
+  </ol>
+ 
+  </div>
+</main>
+
+
+
+</body>
